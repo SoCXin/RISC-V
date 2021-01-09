@@ -1,0 +1,6 @@
+.pio/
+.vscode/
+*.bin
+*.out
+*.o
+~$*
