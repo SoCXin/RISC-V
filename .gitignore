@@ -1,6 +1,4 @@
+*.pyc
 .pio/
 .vscode/
-*.bin
-*.out
-*.o
-~$*
+software/*.bin
