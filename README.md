@@ -1,23 +1,60 @@
-﻿# [RISC-V Architecture](https://github.com/SoCXin/RISC-V)
+﻿# [RISC-V Architecture](https://doc.soc.xin/architecture/riscv)
 
-[![sites](http://182.61.61.133/link/resources/SoC.png)](http://www.SoC.Xin)
+[RISC-V](https://riscv.org/) 是基于精简指令集RISC(Reduced Instruction Set Computer)的开源指令集架构ISA(Instruction Set Architecture)。
 
-[RISC-V](https://riscv.org/) 是一个基于精简指令集（RISC：Reduced Instruction Set Computer）原则的开源指令集架构（ISA）。对RISC-V指令集采用宽松的BSD协议，企业完全自有免费使用，同时也容许企业添加自有指令集拓展而不必开放共享以实现差异化发展。
+RISC-V采用宽松的BSD协议，企业完全自有免费使用，同时也容许企业添加自有指令集拓展而不必开放共享以实现差异化发展。2010年始于加州大学伯克利分校，当前最新版本是 v2.2。
 
-在处理器领域，主流的架构为x86与ARM架构。x86与ARM架构的发展的过程也伴随了现代处理器架构技术的不断发展成熟，但作为商用的架构，为了能够保持架构的向后兼容性，其不得不保留许多过时的定义，导致其指令数目多，指令冗余严重，文档数量庞大，所以要在这些架构上开发新的操作系统或者直接开发应用门槛很高。而RISC-V架构则能完全抛弃包袱，借助计算机体系结构经过多年的发展已经成为比较成熟的技术的优势，从轻上路。RISC-V基础指令集则只有40多条，加上其他的模块化扩展指令总共几十条指令，具有后发优势。
+在处理器领域，主流的架构x86与ARM架构的发展的过程也伴随了现代处理器架构技术的不断发展成熟，但作为商用的架构，为了能够保持架构的向后兼容性，其不得不保留许多过时的定义，导致其指令数目多，指令冗余严重，文档数量庞大，所以要在这些架构上开发新的操作系统或者直接开发应用门槛很高。而RISC-V架构则能完全抛弃包袱，借助计算机体系结构经过多年的发展已经成为比较成熟的技术的优势，从轻上路。
 
-RISC-V并不是一种处理器或芯片（Implementation），而是指令集规范（Specification）。指令集是软件和硬件之间的接口，在CPU中指导它如何进行运算。
+RISC-V基础指令集则只有40多条，加上其他的模块化扩展指令总共几十条指令，具有后发优势。
 
-### [相关产品](https://github.com/SoCXin?q=RISC-V&type=&language=&sort=)
+RV32I是32位基础整数指令集 (RV32E嵌入式指令集子集)，它支持32位寻址空间，支持字节地址访问，仅支持小端格式(little-endian,高地址高位,低地址地位)，RV32I是固定的，指具有基本整数ISA的32位CPU，其他扩展指令：
+```
+M：整数乘法和除法扩展
+A：原子指令扩展
+C：压缩指令扩展
+F：单精度浮点扩展
+D：双精度浮点扩展
+V：向量扩展
+P：DSP扩展
+```
 
-* [WCH](http://special.wch.cn/zh_cn/mcu/)
-    * [CH573](https://github.com/SoCXin/CH573)
-    * [CH569](https://github.com/SoCXin/CH569)
-    * [CH32V103](https://github.com/SoCXin/CH32V103)
-    * [CH32V307](https://github.com/SoCXin/CH32V307)
-* [espressif](https://www.espressif.com/)
-    * [ESP32-C3](https://github.com/SoCXin/ESP32-C3)
-    * [ESP32-C6](https://github.com/SoCXin/ESP32-C6)
+|  Architecture  | Dhrystone(DMIPS/MHz) | CoreMark/MHz | Power(uW/MHz) | Area(mm2) |  发布日期 |
+| --------- | --------- | ------------ | --------- | ------------ | --------- |
+| [Cortex-M0+](https://doc.soc.xin/architecture/cortexM0) |   0.95    |     2.39  |  3.8 (40nm)   |  0.0066 (40nm) | 2009年 |
+| [Cortex-M85](https://doc.soc.xin/architecture/cortexM85) |   3.13   |    6.28   |      |      | 2022年 |
+| [Andes](#Andes) D45 |  2.83  | 5.65   | 25.2 (28nm) | 0.186 (28nm) | 2020年 |
+| [玄铁](#玄铁) C910 |   5.8    |     7.0    |
+| [玄铁](#玄铁) C906 |   2.4   |   3.8  |
+| [玄铁](#玄铁) E907 |   2.0   |  3.8   |
+| [玄铁](#玄铁) E906 |   2.0   |  3.5   |
+| [玄铁](#玄铁) E902 |   1.55  |  2.69  |
+| [青稞](#青稞) V4F |      |    3.19   |
 
 
-### [探索芯世界 www.SoC.xin](http://www.SoC.Xin)
+## Andes
+
+晶心科技股份有限公司于2005年之上半年成立于新竹科学园区的硅导竹科研发中心。
+
+[Andes D45](http://www.andestech.com/cn/risc-vandes/)
+
+## 玄铁
+
+2021年云栖大会，平头哥宣布开源玄铁RISC-V系列处理器（E902，E906, C906, C910），并开放系列工具及系统软件。这是系列处理器与基础软件的全球首次全栈开源，涵盖了从终端到云的各种场景，是边缘和云的智能安全集成芯片架构的基石，为数字时代提供将推动RISC-V架构走向成熟，帮助RISC-V软硬件技术加速融合发展，推动创新落地。
+
+玄铁RISC-V斩获全球权威AI基准测试MLPerf四项第一，刷新性能上限；玄铁C910率先实现安卓12.0新版本的AI支持，不断拓展生态边界；玄铁4款商用处理器及系列软件和工具也已开源开放。截至目前，紫光展锐、全志科技、杭州国芯、珠海炬芯、智芯微、卓胜微电子、爱普特、中科蓝讯、晶视、博流、纳思达等200余家企业都在基于玄铁处理器设计芯片。
+
+## 青稞
+
+[WCH 青稞](https://doc.soc.xin/wch/riscv) V4 系列微处理器是基于标准 RISC-V 指令集架构，自研的 32 位通用 MCU 微处理器。根据不同的运用场景和指令集组合，该系列包括 V4A，V4B，V4C，V4F。
+
+V4 系列均支持 RV32IMAC 指令集扩展，其中 V4F 支持单精度硬件浮点，即支持 RV32IMACF 扩展。同时 V4B、V4C、V4F 还支持自定义扩展 XW。
+
+除此之外，还支持硬件压栈（HPE）、免表中断（VTF）、精简的两线调试接口、支持“WFE”指令、物理内存保护（PMP）等特色功能。
+
+青稞V4微处理器是基于标准RISC-V指令集架构，自研的32位通用MCU微处理器。支持RV32IMACF指令集和自扩展字节和半字操作压缩指令，支持中断嵌套、硬件压栈（HPE）、免表中断（VTF），支持多种低功耗模式，增强的两线调试接口，支持标准RISC-V调试，具有物理 内存保护（PMP）等功能。
+
+[V4F:CH32V307](https://github.com/SoCXin/CH32V307)
+
+
+### [www.SoC.xin](http://www.SoC.Xin)
