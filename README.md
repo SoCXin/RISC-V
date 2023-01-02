@@ -19,11 +19,11 @@ V：向量扩展
 P：DSP扩展
 ```
 
-|  Architecture  | Dhrystone(DMIPS/MHz) | CoreMark/MHz | Power(uW/MHz) | Area(mm2) |  发布日期 |
+|  Architecture  | DMIPS/MHz | CoreMark/MHz | Power(uW/MHz) | Area(mm2) |  发布日期 |
 | --------- | --------- | ------------ | --------- | ------------ | --------- |
 | [Cortex-M0+](https://doc.soc.xin/architecture/cortexM0) |   0.95    |     2.39  |  3.8 (40nm)   |  0.0066 (40nm) | 2009年 |
 | [Cortex-M85](https://doc.soc.xin/architecture/cortexM85) |   3.13   |    6.28   |      |      | 2022年 |
-| [Andes](#Andes) D45 |  2.83  | 5.65   | 25.2 (28nm) | 0.186 (28nm) | 2020年 |
+| [Andes](#Andes) D45 |  2.86 | 5.67 | 25.2 (28nm) | 0.186 (28nm) | 2020年 |
 | [玄铁](#玄铁) C910 |   5.8    |     7.0    |
 | [玄铁](#玄铁) C906 |   2.4   |   3.8  |
 | [玄铁](#玄铁) E907 |   2.0   |  3.8   |
@@ -36,7 +36,12 @@ P：DSP扩展
 
 晶心科技股份有限公司于2005年之上半年成立于新竹科学园区的硅导竹科研发中心。
 
-[Andes D45](http://www.andestech.com/cn/risc-vandes/)
+
+|  [Andes D45](http://www.andestech.com/cn/risc-vandes/)  | Fmax | CoreMark | Package | Price |  发布日期 |
+| --------- | --------- | ------------ | --------- | ------------ | --------- |
+| [HPM6750](https://doc.soc.xin/HPM6750) |  816 MHz  | 9220  |  BGA289  |  ￥55 | 2022-4 |
+
+
 
 ## 玄铁
 
